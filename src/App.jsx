@@ -119,7 +119,7 @@ export default function App() {
               className="text-indigo-800"
               onClick={() => {
                 // Implement edit logic here
-                const updatedSale = prompt("Edit the sale:", `${sale.price}k ${sale.menu}`);
+                const updatedSale = prompt("Edit the sale name:", `${sale.menu}`);
                 if (updatedSale) {
                   // Update the sales array
                   setSales((prevSales) => {
