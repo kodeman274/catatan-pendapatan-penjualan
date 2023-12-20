@@ -137,7 +137,7 @@ export default function App() {
 
         <div className="pt-4">
           <h2 className="text-lg font-bold text-teal-800 text-center">
-            Total pendapatan (nama-toko) = {totalIncome}ribu
+            Total pendapatan (nama-toko) = {totalIncome} k
           </h2>
         </div>
       </div>
