@@ -10,6 +10,7 @@ Currently, two official plugins are available:
 
 # Catatan Penjualan
 Demo: https://catatan-pendapatan-penjualan.vercel.app/
+<hr>
 <img width="698" alt="Screenshot 2023-12-21 at 16 08 37" src="https://github.com/kodeman274/catatan-pendapatan-penjualan/assets/99820483/3a722ca5-6f4f-42d1-b8e5-8983e81d28af">
 
 
