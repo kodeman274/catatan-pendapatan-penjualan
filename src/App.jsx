@@ -59,6 +59,15 @@ export default function App() {
     }
   };
 
+  const handleRemoveSale = (index) => {
+    const confirmRemove = window.confirm("Apakah Anda yakin ingin menghapus penjualan ini?");
+    if (confirmRemove) {
+      const removedSale = sales[index];
+      setSales((prevSales) => prevSales.filter((_, i) => i !== index));
+      setTotalIncome((prevIncome) => prevIncome - removedSale.price);
+    }
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-indigo-800 relative">
       <div className="w-full max-w-2xl px-4 py-8 mx-auto bg-white rounded-lg shadow-xl">
@@ -115,6 +124,15 @@ export default function App() {
             <h1 className="text-lg font-mono font-bold text-purple-900 leading-tight border-b-2 pb-2">
               {sale.price}k {sale.menu} - {sale.date}
             </h1>
+            <button
+              className="text-indigo-800 mr-2"
+              onClick={() => {
+                // Implement remove logic here
+                handleRemoveSale(index);
+              }}
+            >
+              Hapus
+            </button>
             <button
               className="text-indigo-800"
               onClick={() => {
