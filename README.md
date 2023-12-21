@@ -51,8 +51,8 @@ Jika Anda ingin berkontribusi pada pengembangan proyek ini, berikut adalah langk
 Fork repository ini.
 Lakukan perubahan pada branch fitur atau perbaikan.
 Buat pull request ke branch utama repository.
-
-## Teknologi yang Digunakan
+ 
+## Teknologi yang Digunakan:
 
 React: Library JavaScript untuk pengembangan antarmuka pengguna.
 LocalStorage: Untuk menyimpan data penjualan secara lokal pada perangkat pengguna.
