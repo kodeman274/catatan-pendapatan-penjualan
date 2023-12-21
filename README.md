@@ -24,6 +24,7 @@ Aplikasi ini memiliki fungsi sebagai berikut:
 * Mencatat tanggal pembelian
 * Menampilkan total pendapatan
 * Mengedit kata-kata pada form input menu
+* Menghapus data yang tidak lagi diperlukan
 
 ## Cara Penggunaan
 
