@@ -36,6 +36,11 @@ Untuk mengedit kata-kata pada form input menu, Anda perlu mengikuti langkah-lang
 2. Edit kata-kata yang ingin Anda ubah.
 3. Klik tombol "Kirim" untuk menyimpan perubahan.
 
+Untuk mwnghapus data menu/barang pada form input, Anda perlu mengikuti langkah-langkah berikut 
+1.  Klik icon "Hapus" pada form input
+2.  Hapus menu/barang yang tidak lagi ingin disimoan
+3. Data akan terhapus juga hilang dari local storage
+
 ## Data yang Disimpan
 
 Aplikasi ini menyimpan data penjualan ke dalam lokal storage. Data yang disimpan meliputi:
