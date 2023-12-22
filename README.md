@@ -31,7 +31,7 @@ Aplikasi ini memiliki fungsi sebagai berikut:
 Untuk menggunakan aplikasi ini, Anda perlu mengikuti langkah-langkah berikut:
 
 1. Buka aplikasi Catatan Penjualan.
-2. Masukkan nama menu dan harga pada form input.
+2. Masukkan nama menu dan harga pada form input misal: 23.500 pakai . untuk angka dengan desimal.
 3. Masukkan tanggal pembelian pada form input.
 4. Klik tombol "Kirim" untuk menyimpan data.
 

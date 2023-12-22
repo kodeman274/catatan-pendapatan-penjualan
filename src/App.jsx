@@ -33,7 +33,17 @@ export default function App() {
   };
 
   const handlePriceChange = (e) => {
-    setPrice(e.target.value);
+    const rawValue = e.target.value;
+    // Menghapus karakter selain angka, koma, dan titik
+    const cleanedValue = rawValue.replace(/[^\d.,]/g, '');
+  
+    // Menguji apakah nilai setelah dibersihkan adalah angka yang valid
+    if (!isNaN(cleanedValue)) {
+      setPrice(cleanedValue);
+    } else {
+      // Jika input tidak valid, Anda dapat memberikan umpan balik kepada pengguna atau mengabaikannya
+      alert("Format harga tidak valid.");
+    }
   };
 
   const handleMenuChange = (e) => {
@@ -155,7 +165,7 @@ export default function App() {
 
         <div className="pt-4">
           <h2 className="text-lg font-bold text-teal-800 text-center">
-            Total pendapatan (nama-toko) = {totalIncome} k
+            Total pendapatan (nama-toko) = Rp. {totalIncome}k
           </h2>
         </div>
       </div>
