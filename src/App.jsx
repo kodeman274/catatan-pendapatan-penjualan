@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import jsPDF  from "jspdf";
+import 'jspdf-autotable';
+
 
 const STORAGE_KEY = "ayamTaliwangSales";
 
@@ -78,6 +81,28 @@ export default function App() {
     }
   };
 
+  const handleExportToPDF = () => {
+    const doc = new jsPDF();
+    doc.text("Catatan Penjualan Ayam Taliwang", 10, 10);
+  
+    // Tambahkan header tabel
+    const headers = ["Harga", "Nama Menu/Barang", "Tanggal"];
+    const data = sales.map(sale => [`${sale.price}k`, sale.menu, sale.date]);
+  
+    // Tambahkan tabel ke PDF
+    doc.autoTable({
+      startY: 20,
+      head: [headers],
+      body: data,
+    });
+  
+    // Tambahkan total pendapatan di akhir laporan
+    doc.text("Total Pendapatan: Rp. " + totalIncome.toString() + "k", 10, doc.autoTable.previous.finalY + 10);
+  
+    // Simpan PDF
+    doc.save("laporan-penjualan.pdf");
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-indigo-800 relative">
       <div className="w-full max-w-2xl px-4 py-8 mx-auto bg-white rounded-lg shadow-xl">
@@ -127,6 +152,13 @@ export default function App() {
           >
             Kirim
           </button>
+          <button 
+          type="button"
+          onClick={handleExportToPDF}
+          className="w-full bg-indigo-800 text-white p-2 rounded-md mt-4"
+        >
+          Export ke PDF
+        </button>
         </form>
 
         {sales.map((sale, index) => (

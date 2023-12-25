@@ -71,12 +71,5 @@ LocalStorage: Untuk menyimpan data penjualan secara lokal pada perangkat penggun
 
 Aplikasi Catatan Penjualan merupakan aplikasi yang sederhana dan mudah digunakan. Aplikasi ini dapat membantu Anda untuk mencatat pendapatan penjualan dengan mudah dan efisien.
 
-## Pengembangan Selanjutnya
-
-Aplikasi ini dapat dikembangkan lebih lanjut dengan menambahkan fitur-fitur berikut:
-
-* Fitur export data ke file
-* Fitur import data dari file
-* Fitur laporan penjualan
 
 
