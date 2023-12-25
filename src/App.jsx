@@ -83,7 +83,7 @@ export default function App() {
 
   const handleExportToPDF = () => {
     const doc = new jsPDF();
-    doc.text("Catatan Penjualan Ayam Taliwang", 10, 10);
+    doc.text("Catatan Penjualan [nama-toko]", 10, 10);
   
     // Tambahkan header tabel
     const headers = ["Harga", "Nama Menu/Barang", "Tanggal"];
