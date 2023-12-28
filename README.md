@@ -25,6 +25,8 @@ Aplikasi ini memiliki fungsi sebagai berikut:
 * Menampilkan total pendapatan
 * Mengedit kata-kata pada form input menu
 * Menghapus data yang tidak lagi diperlukan
+* Export data menjadi pdf
+
 
 ## Cara Penggunaan
 
@@ -45,6 +47,10 @@ Untuk mwnghapus data menu/barang pada form input, Anda perlu mengikuti langkah-l
 1.  Klik icon "Hapus" pada form input
 2.  Hapus menu/barang yang tidak lagi ingin disimoan
 3. Data akan terhapus juga hilang dari local storage
+
+Untuk Export data ke pdf, Anda perlu mengikuti langkah-langkah berikut 
+1.  Klik icon "Export PDF" pada form input
+2.  Data seluruhnya akan terexport ke pdf
 
 ## Data yang Disimpan
 
