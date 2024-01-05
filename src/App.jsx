@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import jsPDF  from "jspdf";
-import 'jspdf-autotable';
-
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 const STORAGE_KEY = "ayamTaliwangSales";
 
@@ -15,7 +14,8 @@ export default function App() {
   });
 
   const [totalIncome, setTotalIncome] = useState(() => {
-    const storedTotalIncome = parseFloat(localStorage.getItem("totalIncome")) || 0;
+    const storedTotalIncome =
+      parseFloat(localStorage.getItem("totalIncome")) || 0;
     return storedTotalIncome;
   });
 
@@ -38,8 +38,8 @@ export default function App() {
   const handlePriceChange = (e) => {
     const rawValue = e.target.value;
     // Menghapus karakter selain angka, koma, dan titik
-    const cleanedValue = rawValue.replace(/[^\d.,]/g, '');
-  
+    const cleanedValue = rawValue.replace(/[^\d.,]/g, "");
+
     // Menguji apakah nilai setelah dibersihkan adalah angka yang valid
     if (!isNaN(cleanedValue)) {
       setPrice(cleanedValue);
@@ -68,12 +68,16 @@ export default function App() {
       setMenu("");
       setDate("");
     } else {
-      alert("Format inputnya salah. Harap masukkan harga dan menu dengan benar.");
+      alert(
+        "Format inputnya salah. Harap masukkan harga dan menu dengan benar."
+      );
     }
   };
 
   const handleRemoveSale = (index) => {
-    const confirmRemove = window.confirm("Apakah Anda yakin ingin menghapus penjualan ini?");
+    const confirmRemove = window.confirm(
+      "Apakah Anda yakin ingin menghapus penjualan ini?"
+    );
     if (confirmRemove) {
       const removedSale = sales[index];
       setSales((prevSales) => prevSales.filter((_, i) => i !== index));
@@ -81,24 +85,43 @@ export default function App() {
     }
   };
 
+  const handleRemoveAllData = () => {
+    const confirmRemoveAll = window.confirm(
+      "apakah ada yakin mengahapus semua data ini"
+    );
+    if (confirmRemoveAll) {
+      // Menghapus semua data penjualan
+      setSales([]);
+      // Menghapus data dari local storage
+      setTotalIncome(0);
+
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem("totalIncome");
+    }
+  };
+
   const handleExportToPDF = () => {
     const doc = new jsPDF();
     doc.text("Catatan Penjualan [nama-toko]", 10, 10);
-  
+
     // Tambahkan header tabel
     const headers = ["Harga", "Nama Menu/Barang", "Tanggal"];
-    const data = sales.map(sale => [`${sale.price}k`, sale.menu, sale.date]);
-  
+    const data = sales.map((sale) => [`${sale.price}k`, sale.menu, sale.date]);
+
     // Tambahkan tabel ke PDF
     doc.autoTable({
       startY: 20,
       head: [headers],
       body: data,
     });
-  
+
     // Tambahkan total pendapatan di akhir laporan
-    doc.text("Total Pendapatan: Rp. " + totalIncome.toString() + "k", 10, doc.autoTable.previous.finalY + 10);
-  
+    doc.text(
+      "Total Pendapatan: Rp. " + totalIncome.toString() + "k",
+      10,
+      doc.autoTable.previous.finalY + 10
+    );
+
     // Simpan PDF
     doc.save("laporan-penjualan.pdf");
   };
@@ -152,13 +175,20 @@ export default function App() {
           >
             Kirim
           </button>
-          <button 
-          type="button"
-          onClick={handleExportToPDF}
-          className="w-full bg-indigo-800 text-white p-2 rounded-md mt-4"
-        >
-          Export ke PDF
-        </button>
+          <button
+            type="button"
+            onClick={handleExportToPDF}
+            className="w-full bg-indigo-800 text-white p-2 rounded-md mt-4"
+          >
+            Export ke PDF
+          </button>
+          <button
+            type="button"
+            onClick={handleRemoveAllData}
+            className="w-full bg-indigo-800 text-white p-2 rounded-md mt-4"
+          >
+            Menghapus Semua Data Catatan
+          </button>
         </form>
 
         {sales.map((sale, index) => (
@@ -179,12 +209,19 @@ export default function App() {
               className="text-indigo-800"
               onClick={() => {
                 // Implement edit logic here
-                const updatedSale = prompt("Edit the sale name:", `${sale.menu}`);
+                const updatedSale = prompt(
+                  "Edit the sale name:",
+                  `${sale.menu}`
+                );
                 if (updatedSale) {
                   // Update the sales array
                   setSales((prevSales) => {
                     const updatedSales = [...prevSales];
-                    updatedSales[index] = { price: sale.price, menu: updatedSale, date: sale.date };
+                    updatedSales[index] = {
+                      price: sale.price,
+                      menu: updatedSale,
+                      date: sale.date,
+                    };
                     return updatedSales;
                   });
                 }
