@@ -147,7 +147,7 @@ export default function App() {
               className="w-1/2 p-2 mr-2 rounded-md border-none bg-indigo-800 text-white placeholder-slate-200 shadow-lg outline-none"
               type="text"
               name="price"
-              value={price}
+              value={price.toLocaleString("id-ID")}
               onChange={handlePriceChange}
               placeholder="Harga"
             />
@@ -194,7 +194,7 @@ export default function App() {
         {sales.map((sale, index) => (
           <div key={index} className="mb-2">
             <h1 className="text-lg font-mono font-bold text-purple-900 leading-tight border-b-2 pb-2">
-              {sale.price}k {sale.menu} - {sale.date}
+              {sale.price.toLocaleString("id-ID")} {sale.menu} - {sale.date}
             </h1>
             <button
               className="text-indigo-800 mr-2"
@@ -234,7 +234,8 @@ export default function App() {
 
         <div className="pt-4">
           <h2 className="text-lg font-bold text-teal-800 text-center">
-            Total pendapatan (nama-toko) = Rp. {totalIncome}k
+            Total pendapatan (nama-toko) = Rp.{" "}
+            {totalIncome.toLocaleString("id-ID")}
           </h2>
         </div>
       </div>
