@@ -131,7 +131,7 @@ export default function App() {
       <div className="w-full max-w-2xl px-4 py-8 mx-auto bg-white rounded-lg shadow-xl">
         <div className="mb-6">
           <marquee className="">
-            Jangan lupa selalu dicatat jika ada penjualan yang masuk
+            Jangan lupa selalu dicatat jika ada cash flow
           </marquee>
           <h2 className="text-2xl font-bold text-center text-teal-800">
             Catatan Penjualan (nama-toko)
