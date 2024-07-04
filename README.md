@@ -58,14 +58,6 @@ Aplikasi ini menyimpan data penjualan ke dalam lokal storage. Data yang disimpan
 - Harga
 - Tanggal pembelian
 
-## Pengembangan dan Kontribusi
-
-Jika Anda ingin berkontribusi pada pengembangan proyek ini, berikut adalah langkah-langkah umum:
-
-Fork repository ini.
-Lakukan perubahan pada branch fitur atau perbaikan.
-Buat pull request ke branch utama repository.
-
 ## Teknologi yang Digunakan:
 
 React: Library JavaScript untuk pengembangan antarmuka pengguna.
